@@ -1,0 +1,19 @@
+/* src/App.css */
+.App {
+  min-height: 100vh;
+  background-color: #151515; /* Dark background from App */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
+
+@media (max-width: 600px) {
+  .App {
+    padding: 8px;
+  }
+}
+
+.App * {
+  transition: all 0.3s ease-in-out;
+}
