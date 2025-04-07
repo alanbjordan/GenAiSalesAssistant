@@ -74,6 +74,12 @@ const Chat = () => {
   // Reference to the scrollable container
   const threadRef = useRef(null);
 
+  // Clear threadId on component mount (page reload)
+  useEffect(() => {
+    setThreadId('');             // Reset state
+    localStorage.removeItem('threadId'); // If you are using localStorage to persist threadId
+  }, []);
+
   const handleSend = async (e) => {
     e.preventDefault();
 
@@ -95,6 +101,8 @@ const Chat = () => {
         { role: 'assistant', content: assistant_message },
       ]);
       setThreadId(thread_id);
+      // If desired, you could also persist the new thread id to localStorage:
+      // localStorage.setItem('threadId', thread_id);
     } catch (err) {
       console.error('Error sending message:', err);
       setError('Failed to send message.');
@@ -167,7 +175,7 @@ const Chat = () => {
             fullWidth
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            placeholder="Ask me anything..."
+            placeholder="Ask the property guide a question..."
             variant="outlined"
             size="small"
             sx={{

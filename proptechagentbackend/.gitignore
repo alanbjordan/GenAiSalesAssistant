@@ -1,0 +1,6 @@
+# Ignore the virtual environment folder at the root
+/proptechagent
+
+# Ignore Python cache files and directories
+/__pycache__
+*.py[cod]
