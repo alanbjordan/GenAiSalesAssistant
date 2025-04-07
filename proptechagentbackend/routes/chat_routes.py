@@ -135,7 +135,7 @@ def chat():
 
         # Call the ChatCompletion API using the new tools syntax
         completion = client.chat.completions.create(
-            model="gpt-4o",  # or your chosen model
+            model="gpt-4o",  
             messages=conversation_history,
             tools=tools
         )
