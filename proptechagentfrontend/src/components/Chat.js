@@ -95,6 +95,7 @@ const Chat = () => {
         message: userMsg,
         thread_id: threadId,
       });
+      console.log('Response data:', response.data);
       const { assistant_message, thread_id } = response.data;
       setMessages((prev) => [
         ...prev,
