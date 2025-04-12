@@ -4,7 +4,7 @@ import traceback
 from flask import Blueprint, request, jsonify
 from openai import OpenAI  # New import style
 from helpers.cors_helpers import pre_authorized_cors_preflight
-from helpers.property_helpers import fetch_properties  # Your local helper for property lookup
+from helpers.property_helpers import fetch_properties  
 
 # Initialize the OpenAI client using the new syntax
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
